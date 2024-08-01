@@ -21,7 +21,7 @@ const DiaryCreate: React.FC = () => {
   const onSubmit = async (data: DiaryForm) => {
     try {
       const formData = new FormData();
-      formData.append('content', data.content);
+      formData.append('content', data.cogitntent);
       if (image) {
         formData.append('image', image);
       }

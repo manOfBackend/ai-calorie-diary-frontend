@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
+
+import instance from '../api/axios';
 
 interface DiaryEntry {
   id: string;
@@ -17,7 +18,7 @@ const DiaryEntry: React.FC = () => {
   useEffect(() => {
     const fetchEntry = async () => {
       try {
-        const response = await axios.get(`/api/diary/${id}`);
+        const response = await instance.get(`/diary/${id}`);
         setEntry(response.data);
       } catch (error) {
         console.error('Failed to fetch diary entry:', error);
